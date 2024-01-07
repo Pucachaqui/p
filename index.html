@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang=es dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+            <title>MVC1</title>
+            <!-- Importacion de bootstrap -->
+            <!-- para que la pagina sea responsib -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- Bootstrap CSS -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+           <!-- Bootstrap Java script -->
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        </head>
+        <body>
+
+          <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img src="https://content.wepik.com/statics/25844818/preview-page0.jpg" alt="" style="width: 10%;"></a>
+                <a class="nav-link disabled text-white fs-3" href="#" tabindex="-1" aria-disabled="true">LUBRIMOTORES "EL ROBIN"</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link active text-dark fs-5" aria-current="page" href="index.html">CLIENTES</a>
+
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://i.pinimg.com/564x/b0/ef/bb/b0efbb643b6288776494bce36849a129.jpg" class="d-block w-80" alt="..." style="width:100%; height: 500px;">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="fs-1 text-whitw">CHEVROLET</h5>
+                      <p class="text-info fs-2">Siempre Contigo</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://besthqwallpapers.com/Uploads/3-3-2022/191732/thumb2-toyota-white-logo-4k-white-neon-lights-creative-black-abstract-background.jpg" class="d-block w-80" alt="..." style="width:100%; height: 500px;">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="fs-1 text-white">TOYOTA</h5>
+                      <p class="text-info fs-2">Nunca pares</p>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://i.pinimg.com/564x/31/3a/d9/313ad9af09f4ca69ec5473d31b93c716.jpg" class="d-block w-80" alt="..." style="width:100%; height: 500px;">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5 class="fs-1 text-white">MITSUBISHI</h5>
+                      <p class="text-info fs-2">Advanced and ever advacing</p>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <script>
+              //Scrip para hacer las letras en mayusculas al incio
+                  function capitalizarPrimeraLetra(cadena) {
+                      return cadena.charAt(0).toUpperCase() + cadena.slice(1);
+                  }
+
+                  const inputs = document.querySelectorAll('.text-capitalize');
+
+                  inputs.forEach(input => {
+                      input.addEventListener('input', function() {
+                          let valor = this.value;
+                          this.value = capitalizarPrimeraLetra(valor);
+                      });
+                  });
+                  //validacion placa
+
+
+              </script>
+
+
+            </div>
+            <div class="col-md-8">
+              <h1 class="text-center lead">Formulario registro cliente</h1>
+
+            <form id="registro">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label for="cedula" class="form-label">Cédula</label>
+                      <input type="text" class="form-control" id="cedula" placeholder="Cédula" required >
+                    </div>
+                    <div class="col-md-4">
+                      <label for="nombre" class="form-label">Nombre</label>
+                      <input type="text" class="form-control text-capitalize" pattern="[A-Za-z\s]+" id="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="apellido" class="form-label">Apellido</label>
+                      <input type="text" class="form-control text-capitalize" pattern="[A-Za-z\s]+" id="apellido" placeholder="Apellido" required>
+                    </div>
+                  </div>
+
+                  <div class="row mt-3">
+                    <div class="col-md-4">
+                      <label for="placa" class="form-label">Placa Vehículo</label>
+                      <input type="text" class="form-control" id="placa" placeholder="ABC-1234" required>
+                    </div>
+                    <div class="col-md-8">
+                      <label for="razon-ingreso" class="form-label">Razón de Ingreso</label>
+                      <textarea class="form-control" id="razon-ingreso" rows="3" placeholder="El vehiculo ingresa por..." required ></textarea>
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-md-12">
+                      <button type="submit" class="btn btn-primary" onclick="crearRegis()">Crear</button>
+                    </div>
+                  </div>
+                </form>
+
+            </form>
+            </div>
+            <div class="col-md-2">
+
+            </div>
+
+            </div>
+            <br>
+            <br>
+            <div class="row">
+              <div class="col-md-1">
+
+              </div>
+              <div class="col-md-10">
+
+
+              <table class="table table-hover table-dark">
+                          <thead>
+                            <tr>
+                              <th scope="col">Cedula</th>
+                              <th scope="col">Nombre</th>
+                              <th scope="col">Apellido</th>
+                              <th scope="col">Placa vehiculo</th>
+                              <th scope="col">Razon ingreso</th>
+                              <th scope="col">Actualizar</th>
+                              <th scope="col">Borrar</th>
+                            </tr>
+                          </thead>
+                          <tbody id="tabla-body">
+                          </tbody>
+                        </table>
+                        </div>
+                        <div class="col-md-1">
+
+                        </div>
+
+
+            </div>
+            <!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Actualizar</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <form id="crud-form">
+              <div class="row">
+                <div class="col-md-4">
+                  <label for="cedula" class="form-label">Cédula</label>
+                  <input type="text" class="form-control" id="cedula_a" placeholder="Cédula">
+                </div>
+                <div class="col-md-4">
+                  <label for="nombre" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="nombre_a" placeholder="Nombre">
+                </div>
+                <div class="col-md-4">
+                  <label for="apellido" class="form-label">Apellido</label>
+                  <input type="text" class="form-control" id="apellido_a" placeholder="Apellido">
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-md-4">
+                  <label for="placa" class="form-label">Placa Vehículo</label>
+                  <input type="text" class="form-control" id="placa_a" placeholder="ABC-1234">
+                </div>
+                <div class="col-md-8">
+                  <label for="razon-ingreso" class="form-label">Razón de Ingreso</label>
+                  <textarea class="form-control" id="razon-ingreso_a" rows="3" placeholder="El vehiculo ingresa por..."></textarea>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-md-12">
+                  <button type="submit" class="btn btn-primary" id="actualizar" onclick="editarRegistro()">Actualizar</button>
+                </div>
+              </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal de confirmación para eliminar -->
+<div class="modal fade" id="confirmarEliminarModal" tabindex="-1" aria-labelledby="confirmarEliminarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmarEliminarModalLabel">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro de que deseas eliminar este registro?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="eliminarConfirmado">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <script type="module">
+            // Import the functions you need from the SDKs you need
+           import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+           import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+           // TODO: Add SDKs for Firebase products that you want to use
+           // https://firebase.google.com/docs/web/setup#available-libraries
+
+           // Your web app's Firebase configuration
+           const firebaseConfig = {
+             apiKey: "AIzaSyBMJsVpnbOwVOiVNbTZScZdet9qlGigDL0",
+             authDomain: "conexion-8ec0d.firebaseapp.com",
+             databaseURL: "https://conexion-8ec0d-default-rtdb.firebaseio.com",
+             projectId: "conexion-8ec0d",
+             storageBucket: "conexion-8ec0d.appspot.com",
+             messagingSenderId: "679910299749",
+             appId: "1:679910299749:web:9800b464879628b4850e8c"
+           };
+
+           // Initialize Firebase
+           const app = initializeApp(firebaseConfig);
+           const database = getDatabase(app);
+                      // Función para crear un registro en la base de datos
+                      window.crearRegis = function () {
+                          const cedula = document.getElementById("cedula").value;
+                          const nombre = document.getElementById("nombre").value;
+                          const apellido = document.getElementById("apellido").value;
+                          const placa = document.getElementById("placa").value;
+                          const razonIngreso = document.getElementById("razon-ingreso").value;
+
+                          // Obtener una referencia a la base de datos
+                          const database = getDatabase();
+
+                          // Crear un nuevo registro en la base de datos
+                          push(ref(database, 'cajamarca'), {
+                              cedula: cedula,
+                              nombre: nombre,
+                              apellido: apellido,
+                              placaVehiculo: placa,
+                              razonIngreso: razonIngreso
+                          }).then((newRef) => {
+                              console.log('Registro creado con ID:', newRef.key);
+                          }).catch((error) => {
+                              console.error('Error al crear el registro:', error);
+                          });
+                      };
+
+                      import { update } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js";
+
+                          // ... (código previo)
+
+                          window.editarRegistro = function (registroKey) {
+                              const database = getDatabase();
+
+                              // Obtener valores actualizados de los campos del formulario
+
+                              const registroRef = ref(database, `cajamarca/${registroKey}`);
+
+                              // Crear un objeto con los campos a actualizar
+                              const camposActualizados = {
+                                  cedula: cedula,
+                                  nombre: nombre,
+                                  apellido: apellido,
+                                  placaVehiculo: placa,
+                                  razonIngreso: razonIngreso
+                              };
+                              console.log('La función editarRegistro se ha llamado correctamente.');
+                              // Actualizar los campos específicos del registro
+                              update(registroRef, camposActualizados)
+                                  .then(() => {
+                                      console.log('Registro editado correctamente');
+                                  })
+                                  .catch((error) => {
+                                      console.error('Error al editar el registro:', error);
+                                  });
+                          };
+
+
+                      function cargarDatosTabla() {
+                        const tablaBody = document.getElementById('tabla-body');
+                        const database = getDatabase();
+                        const registrosRef = ref(database, 'cajamarca');
+
+                        onValue(registrosRef, (snapshot) => {
+                          tablaBody.innerHTML = ''; // Limpia el contenido anterior de la tabla
+
+                          if (snapshot.exists()) {
+                            snapshot.forEach((childSnapshot) => {
+                              const registro = childSnapshot.val();
+                              const { cedula,nombre, apellido, placaVehiculo,razonIngreso } = registro;
+
+                              const newRow = document.createElement('tr');
+                              newRow.innerHTML = `
+                                <td>${cedula}</td>
+                                <td>${nombre}</td>
+                                <td>${apellido}</td>
+                                <td>${placaVehiculo}</td>
+                                <td>${razonIngreso}</td>
+                                <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="cargarDatos('${childSnapshot.key}')">
+                                  <i class="bi bi-pencil"></i>
+                                </button></th>
+                                <td><button type="button" class="btn btn-danger" onclick="eliminarRegistro('${childSnapshot.key}')">
+        <i class="bi bi-trash"></i></td>
+                              `;
+
+                              tablaBody.appendChild(newRow);
+                            });
+                          } else {
+                            console.log("No hay datos disponibles.");
+                          }
+                        }, (errorObject) => {
+                          console.error('Error al cargar datos:', errorObject);
+                        });
+                      }
+
+                      // Llama a la función para cargar los datos en la tabla cuando se cargue la página
+                      document.addEventListener('DOMContentLoaded', cargarDatosTabla);
+                      window.cargarDatos = function (registroKey) {
+                      const database = getDatabase();
+                      const registroRef = ref(database, `cajamarca/${registroKey}`);
+
+                      onValue(registroRef, (snapshot) => {
+                        if (snapshot.exists()) {
+                          const registro = snapshot.val();
+                          const { cedula, nombre, apellido, placaVehiculo, razonIngreso } = registro;
+
+                          // Llenar los campos del formulario en el modal con la información del registro
+                          document.getElementById("cedula_a").value = cedula;
+                          document.getElementById("nombre_a").value = nombre;
+                          document.getElementById("apellido_a").value = apellido;
+                          document.getElementById("placa_a").value = placaVehiculo;
+                          document.getElementById("razon-ingreso_a").value = razonIngreso;
+
+                          // Al hacer clic en el botón de actualización, se realizará la actualización
+                          const btnActualizar = document.getElementById("actualizar");
+                          btnActualizar.addEventListener("click", function() {
+                            const cedulaUpdated = document.getElementById("cedula_a").value;
+                            const nombreUpdated = document.getElementById("nombre_a").value;
+                            const apellidoUpdated = document.getElementById("apellido_a").value;
+                            const placaUpdated = document.getElementById("placa_a").value;
+                            const razonIngresoUpdated = document.getElementById("razon-ingreso_a").value;
+
+                            // Lógica para actualizar los datos en la base de datos
+                            const camposActualizados = {
+                              cedula: cedulaUpdated,
+                              nombre: nombreUpdated,
+                              apellido: apellidoUpdated,
+                              placaVehiculo: placaUpdated,
+                              razonIngreso: razonIngresoUpdated
+                            };
+
+                            // Referencia al registro a actualizar
+                            const registroRefToUpdate = ref(database, `cajamarca/${registroKey}`);
+
+                            // Actualizar los campos específicos del registro
+                            update(registroRefToUpdate, camposActualizados)
+                              .then(() => {
+                                console.log('Registro editado correctamente');
+                              })
+                              .catch((error) => {
+                                console.error('Error al editar el registro:', error);
+                              });
+                          });
+                        } else {
+                          console.log("El registro no existe");
+                        }
+                      }, (errorObject) => {
+                        console.error('Error al cargar datos:', errorObject);
+                      });
+                      };
+                      window.eliminarRegistro = function(registroKey) {
+                      // Abre el modal de confirmación
+                      const confirmarEliminarModal = new bootstrap.Modal(document.getElementById('confirmarEliminarModal'));
+                      confirmarEliminarModal.show();
+
+                      // Acción cuando se confirma la eliminación
+                      document.getElementById('eliminarConfirmado').addEventListener('click', function() {
+                          const database = getDatabase();
+                          const registroRef = ref(database, `cajamarca/${registroKey}`);
+
+                          remove(registroRef)
+                              .then(() => {
+                                  console.log('Registro eliminado correctamente');
+                                  cargarDatosTabla();
+                              })
+                              .catch((error) => {
+                                  console.error('Error al eliminar el registro:', error);
+                              });
+
+                          // Cierra el modal después de la acción
+                          confirmarEliminarModal.hide();
+                      });
+                  };
+
+              </script>
+  </body>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
+<section class="">
+  <!-- Footer -->
+  <footer class="text-center text-white" style="background-color: #0a4275;">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: CTA -->
+      <section class="">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-3">Register for free</span>
+          <button data-mdb-ripple-init type="button" class="btn btn-outline-light btn-rounded">
+            Sign up!
+          </button>
+        </p>
+      </section>
+      <!-- Section: CTA -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</section>
